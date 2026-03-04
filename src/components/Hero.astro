@@ -16,11 +16,19 @@ const stagione = Astro.props.stagione ?? manifest?.label ?? '';
 ---
 
 <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden -mt-[72px]">
-  <!-- Animated mesh gradient background -->
-  <div class="absolute inset-0 mesh-gradient"></div>
+  <!-- Background photo -->
+  <div class="absolute inset-0">
+    <img src="/images/hero-bg.jpg" alt="" class="w-full h-full object-cover object-center" loading="eager" />
+  </div>
+
+  <!-- Dark overlay over photo -->
+  <div class="absolute inset-0 bg-azzurro-950/70"></div>
+
+  <!-- Animated mesh gradient overlay (semi-transparent) -->
+  <div class="absolute inset-0 mesh-gradient opacity-40"></div>
 
   <!-- Radial overlay for depth -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(8,37,54,0.4)_100%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(8,37,54,0.5)_100%)]"></div>
 
   <!-- Floating geometric shapes -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">

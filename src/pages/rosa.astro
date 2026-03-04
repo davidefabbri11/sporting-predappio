@@ -16,5 +16,20 @@ const staff = getFirstTeamStaff(seasonId);
     <SeasonSwitcher currentSeasonId={seasonId} basePath="/rosa" />
   </PageHeader>
 
+  <!-- Team Photo -->
+  <section class="py-12 bg-[#fafbfc]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 reveal">
+      <div class="rounded-3xl overflow-hidden shadow-2xl shadow-gray-200/60 border border-gray-100">
+        <img
+          src="/images/team-photo.jpg"
+          alt={`Foto di squadra Sporting Predappio - Stagione ${seasonLabel}`}
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+      </div>
+      <p class="text-center text-gray-400 text-sm mt-4 font-medium">A.S.D. Sporting Predappio — Stagione {seasonLabel}</p>
+    </div>
+  </section>
+
   <RosterView team={team} staff={staff} />
 </Layout>
