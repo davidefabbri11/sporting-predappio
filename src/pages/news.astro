@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import club from '../data/club.json';
+
+// Elfsight App ID — sostituire con il proprio dopo aver creato il widget su elfsight.com
+const elfsightAppId = club.elfsightAppId || '';
+---
+
+<Layout title="News | Sporting Predappio" description="Le ultime notizie e aggiornamenti dallo Sporting Predappio direttamente da Instagram.">
+  <!-- Page Header -->
+  <section class="relative overflow-hidden -mt-[72px]">
+    <div class="absolute inset-0 mesh-gradient"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(8,37,54,0.5)_100%)]"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-28 md:py-32 text-center">
+      <h1 class="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl text-white mb-4 tracking-[0.1em]">News</h1>
+      <p class="text-azzurro-200/80 text-lg">Le ultime dal campo e dallo spogliatoio</p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0">
+      <div class="h-px bg-gradient-to-r from-transparent via-azzurro-400/30 to-transparent"></div>
+      <div class="h-16 bg-gradient-to-t from-white to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Instagram Feed -->
+  <section class="py-14 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-3 mb-8 reveal">
+        <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </div>
+        <h2 class="font-heading font-extrabold text-2xl md:text-3xl tracking-wide">Dal Nostro Instagram</h2>
+      </div>
+
+      {elfsightAppId ? (
+        <!-- Widget Elfsight Instagram Feed -->
+        <div class={`elfsight-app-${elfsightAppId}`} data-elfsight-app-lazy></div>
+      ) : (
+        <!-- Fallback: link diretto a Instagram -->
+        <div class="text-center py-16 reveal">
+          <div class="w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-purple-500/20">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">Seguici su Instagram</h3>
+          <p class="text-gray-400 max-w-md mx-auto mb-8">Tutte le novità, le foto dal campo e gli aggiornamenti della squadra li trovi sul nostro profilo Instagram.</p>
+          <a
+            href={club.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-2xl hover:from-purple-600 hover:to-pink-600 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+            @sportingpredappio
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
+
+{elfsightAppId && (
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+)}
