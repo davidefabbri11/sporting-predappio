@@ -2,33 +2,211 @@
   "aggiornamento": "2026-03-04",
   "giornata": 20,
   "classifica": [
-    { "pos": 1, "squadra": "Marina Calcio", "punti": 44, "pg": 20, "v": 13, "n": 5, "p": 2, "gf": 32, "gs": 11 },
-    { "pos": 2, "squadra": "Medla", "punti": 40, "pg": 20, "v": 13, "n": 1, "p": 6, "gf": 38, "gs": 24 },
-    { "pos": 3, "squadra": "F. Zarattini", "punti": 38, "pg": 20, "v": 11, "n": 5, "p": 4, "gf": 42, "gs": 23 },
-    { "pos": 4, "squadra": "Sporting Predappio", "punti": 36, "pg": 19, "v": 11, "n": 3, "p": 5, "gf": 33, "gs": 22 },
-    { "pos": 5, "squadra": "Porto Fuori", "punti": 35, "pg": 20, "v": 10, "n": 5, "p": 5, "gf": 44, "gs": 25 },
-    { "pos": 6, "squadra": "S. Colombano Italtex", "punti": 31, "pg": 20, "v": 9, "n": 4, "p": 7, "gf": 32, "gs": 25 },
-    { "pos": 7, "squadra": "Low Street Ponte N.", "punti": 30, "pg": 20, "v": 9, "n": 3, "p": 8, "gf": 30, "gs": 21 },
-    { "pos": 8, "squadra": "S. Zaccaria", "punti": 30, "pg": 19, "v": 8, "n": 6, "p": 5, "gf": 27, "gs": 19 },
-    { "pos": 9, "squadra": "Carpinello", "punti": 30, "pg": 19, "v": 8, "n": 6, "p": 5, "gf": 35, "gs": 30 },
-    { "pos": 10, "squadra": "San Pancrazio", "punti": 23, "pg": 20, "v": 6, "n": 5, "p": 9, "gf": 29, "gs": 32 },
-    { "pos": 11, "squadra": "Real", "punti": 18, "pg": 20, "v": 5, "n": 4, "p": 11, "gf": 29, "gs": 55 },
-    { "pos": 12, "squadra": "Punta Marina", "punti": 14, "pg": 19, "v": 4, "n": 2, "p": 13, "gf": 28, "gs": 47 },
-    { "pos": 13, "squadra": "Godo", "punti": 11, "pg": 20, "v": 3, "n": 2, "p": 15, "gf": 21, "gs": 44 },
-    { "pos": 14, "squadra": "G.S. Romagna", "punti": 6, "pg": 20, "v": 1, "n": 3, "p": 16, "gf": 16, "gs": 58 }
+    {
+      "pos": 1,
+      "squadra": "Marina Calcio",
+      "punti": 44,
+      "pg": 20,
+      "v": 13,
+      "n": 5,
+      "p": 2,
+      "gf": 32,
+      "gs": 11
+    },
+    {
+      "pos": 2,
+      "squadra": "Medla",
+      "punti": 40,
+      "pg": 20,
+      "v": 13,
+      "n": 1,
+      "p": 6,
+      "gf": 38,
+      "gs": 24
+    },
+    {
+      "pos": 3,
+      "squadra": "F. Zarattini",
+      "punti": 38,
+      "pg": 20,
+      "v": 11,
+      "n": 5,
+      "p": 4,
+      "gf": 42,
+      "gs": 23
+    },
+    {
+      "pos": 4,
+      "squadra": "Sporting Predappio",
+      "punti": 36,
+      "pg": 19,
+      "v": 11,
+      "n": 3,
+      "p": 5,
+      "gf": 33,
+      "gs": 22
+    },
+    {
+      "pos": 5,
+      "squadra": "Porto Fuori",
+      "punti": 35,
+      "pg": 20,
+      "v": 10,
+      "n": 5,
+      "p": 5,
+      "gf": 44,
+      "gs": 25
+    },
+    {
+      "pos": 6,
+      "squadra": "S. Colombano Italtex",
+      "punti": 31,
+      "pg": 20,
+      "v": 9,
+      "n": 4,
+      "p": 7,
+      "gf": 32,
+      "gs": 25
+    },
+    {
+      "pos": 7,
+      "squadra": "Low Street Ponte N.",
+      "punti": 30,
+      "pg": 20,
+      "v": 9,
+      "n": 3,
+      "p": 8,
+      "gf": 30,
+      "gs": 21
+    },
+    {
+      "pos": 8,
+      "squadra": "S. Zaccaria",
+      "punti": 30,
+      "pg": 19,
+      "v": 8,
+      "n": 6,
+      "p": 5,
+      "gf": 27,
+      "gs": 19
+    },
+    {
+      "pos": 9,
+      "squadra": "Carpinello",
+      "punti": 30,
+      "pg": 19,
+      "v": 8,
+      "n": 6,
+      "p": 5,
+      "gf": 35,
+      "gs": 30
+    },
+    {
+      "pos": 10,
+      "squadra": "San Pancrazio",
+      "punti": 23,
+      "pg": 20,
+      "v": 6,
+      "n": 5,
+      "p": 9,
+      "gf": 29,
+      "gs": 32
+    },
+    {
+      "pos": 11,
+      "squadra": "Real",
+      "punti": 18,
+      "pg": 20,
+      "v": 5,
+      "n": 4,
+      "p": 11,
+      "gf": 29,
+      "gs": 55
+    },
+    {
+      "pos": 12,
+      "squadra": "Punta Marina",
+      "punti": 14,
+      "pg": 19,
+      "v": 4,
+      "n": 2,
+      "p": 13,
+      "gf": 28,
+      "gs": 47
+    },
+    {
+      "pos": 13,
+      "squadra": "Godo",
+      "punti": 11,
+      "pg": 20,
+      "v": 3,
+      "n": 2,
+      "p": 15,
+      "gf": 21,
+      "gs": 44
+    },
+    {
+      "pos": 14,
+      "squadra": "G.S. Romagna",
+      "punti": 6,
+      "pg": 20,
+      "v": 1,
+      "n": 3,
+      "p": 16,
+      "gf": 16,
+      "gs": 58
+    }
   ],
   "marcatori": [
-    { "nome": "Alessio Ambrogetti", "gol": 12, "rigori": 5 },
-    { "nome": "Mattia Valentini", "gol": 4 },
-    { "nome": "Cesare Camanzi", "gol": 3 },
-    { "nome": "Davide Valtancoli", "gol": 3 },
-    { "nome": "Glauco Argentino", "gol": 2 },
-    { "nome": "Abdessamad Charaf", "gol": 2, "rigori": 1 },
-    { "nome": "Giovanni Tani", "gol": 2 },
-    { "nome": "Francesco Casadei", "gol": 1 },
-    { "nome": "Riccardo Milandri", "gol": 1 },
-    { "nome": "Filippo Passero", "gol": 1 },
-    { "nome": "Nicola Rafelli", "gol": 1 },
-    { "nome": "Nicola Sansovini", "gol": 1 }
+    {
+      "nome": "Alessio Ambrogetti",
+      "gol": 12,
+      "rigori": 5
+    },
+    {
+      "nome": "Mattia Valentini",
+      "gol": 4
+    },
+    {
+      "nome": "Cesare Camanzi",
+      "gol": 3
+    },
+    {
+      "nome": "Davide Valtancoli",
+      "gol": 3
+    },
+    {
+      "nome": "Glauco Argentino",
+      "gol": 2
+    },
+    {
+      "nome": "Abdessamad Charaf",
+      "gol": 2,
+      "rigori": 1
+    },
+    {
+      "nome": "Giovanni Tani",
+      "gol": 2
+    },
+    {
+      "nome": "Francesco Casadei",
+      "gol": 1
+    },
+    {
+      "nome": "Riccardo Milandri",
+      "gol": 1
+    },
+    {
+      "nome": "Filippo Passero",
+      "gol": 1
+    },
+    {
+      "nome": "Nicola Rafelli",
+      "gol": 1
+    },
+    {
+      "nome": "Nicola Sansovini",
+      "gol": 1
+    }
   ]
 }

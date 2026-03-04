@@ -13,7 +13,11 @@
       "casa": "S. Colombano Italtex",
       "trasferta": "Sporting Predappio",
       "risultato": "0-1",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [],
+      "marcatoriTrasferta": [
+        { "nome": "Davide Valtancoli", "minuto": 84 }
+      ]
     },
     {
       "giornata": 2,
@@ -22,7 +26,11 @@
       "casa": "Sporting Predappio",
       "trasferta": "Low Street Ponte N.",
       "risultato": "0-1",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [],
+      "marcatoriTrasferta": [
+        { "nome": "Diop B.", "minuto": 24 }
+      ]
     },
     {
       "giornata": 3,
@@ -31,7 +39,18 @@
       "casa": "Real",
       "trasferta": "Sporting Predappio",
       "risultato": "2-5",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Bance A.", "minuto": 2 },
+        { "nome": "Cavina F.", "minuto": 34 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Alessio Ambrogetti", "minuto": 59 },
+        { "nome": "Mattia Valentini", "minuto": 60 },
+        { "nome": "Nicola Sansovini", "minuto": 70 },
+        { "nome": "Cesare Camanzi", "minuto": 80 },
+        { "nome": "Alessio Ambrogetti", "minuto": 91 }
+      ]
     },
     {
       "giornata": 4,
@@ -40,7 +59,16 @@
       "casa": "Sporting Predappio",
       "trasferta": "Medla",
       "risultato": "3-2",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Alessio Ambrogetti", "minuto": 17 },
+        { "nome": "Francesco Casadei", "minuto": 40 },
+        { "nome": "Glauco Argentino", "minuto": 50 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Vaccaro C.", "minuto": 37 },
+        { "nome": "Celli M.", "minuto": 56 }
+      ]
     },
     {
       "giornata": 5,
@@ -49,7 +77,11 @@
       "casa": "Carpinello",
       "trasferta": "Sporting Predappio",
       "risultato": "1-0",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Masotti P.", "minuto": 21 }
+      ],
+      "marcatoriTrasferta": []
     },
     {
       "giornata": 6,
@@ -58,7 +90,17 @@
       "casa": "Sporting Predappio",
       "trasferta": "Porto Fuori",
       "risultato": "4-2",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Alessio Ambrogetti", "minuto": 12, "rigore": true },
+        { "nome": "Davide Valtancoli", "minuto": 30 },
+        { "nome": "Mattia Valentini", "minuto": 38 },
+        { "nome": "Mattia Valentini", "minuto": 40 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Ardagna A.", "minuto": 20, "rigore": true },
+        { "nome": "Greco M.", "minuto": 42 }
+      ]
     },
     {
       "giornata": 7,
@@ -67,7 +109,14 @@
       "casa": "Godo",
       "trasferta": "Sporting Predappio",
       "risultato": "1-2",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Traorè M.", "minuto": 84 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Alessio Ambrogetti", "minuto": 53, "rigore": true },
+        { "nome": "Abdessamad Charaf", "minuto": 79 }
+      ]
     },
     {
       "giornata": 8,
@@ -76,7 +125,9 @@
       "casa": "Sporting Predappio",
       "trasferta": "Marina Calcio",
       "risultato": "0-0",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [],
+      "marcatoriTrasferta": []
     },
     {
       "giornata": 9,
@@ -85,7 +136,12 @@
       "casa": "F. Zarattini",
       "trasferta": "Sporting Predappio",
       "risultato": "2-0",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Glauco Argentino", "minuto": 18, "autorete": true },
+        { "nome": "Sabbadini C.", "minuto": 83 }
+      ],
+      "marcatoriTrasferta": []
     },
     {
       "giornata": 10,
@@ -94,7 +150,13 @@
       "casa": "Sporting Predappio",
       "trasferta": "San Pancrazio",
       "risultato": "1-1",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Alessio Ambrogetti", "minuto": 88 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Grigor F.", "minuto": 63 }
+      ]
     },
     {
       "giornata": 11,
@@ -103,7 +165,13 @@
       "casa": "G.S. Romagna",
       "trasferta": "Sporting Predappio",
       "risultato": "0-3",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [],
+      "marcatoriTrasferta": [
+        { "nome": "Cesare Camanzi", "minuto": 30 },
+        { "nome": "Glauco Argentino", "minuto": 66 },
+        { "nome": "Alessio Ambrogetti", "minuto": 72 }
+      ]
     },
     {
       "giornata": 12,
@@ -112,7 +180,12 @@
       "casa": "S. Zaccaria",
       "trasferta": "Sporting Predappio",
       "risultato": "2-0",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Fabbri E.", "minuto": 25 },
+        { "nome": "Bissi N.", "minuto": 37 }
+      ],
+      "marcatoriTrasferta": []
     },
     {
       "giornata": 13,
@@ -121,7 +194,16 @@
       "casa": "Sporting Predappio",
       "trasferta": "Punta Marina",
       "risultato": "4-1",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Cesare Camanzi", "minuto": 5 },
+        { "nome": "Alessio Ambrogetti", "minuto": 37 },
+        { "nome": "Davide Valtancoli", "minuto": 79 },
+        { "nome": "Giovanni Tani", "minuto": 93 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Demaj", "minuto": 44 }
+      ]
     },
     {
       "giornata": 14,
@@ -130,7 +212,14 @@
       "casa": "Sporting Predappio",
       "trasferta": "S. Colombano Italtex",
       "risultato": "2-1",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Alessio Ambrogetti", "minuto": 34, "rigore": true },
+        { "nome": "Giovanni Tani", "minuto": 41 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Balward Z.", "minuto": 68, "rigore": true }
+      ]
     },
     {
       "giornata": 15,
@@ -139,7 +228,14 @@
       "casa": "Low Street Ponte N.",
       "trasferta": "Sporting Predappio",
       "risultato": "1-2",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Mboup M.", "minuto": 50 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Mattia Valentini", "minuto": 11 },
+        { "nome": "Alessio Ambrogetti", "minuto": 35, "rigore": true }
+      ]
     },
     {
       "giornata": 16,
@@ -148,7 +244,13 @@
       "casa": "Sporting Predappio",
       "trasferta": "Real",
       "risultato": "1-1",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Filippo Passero", "minuto": 6 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Lucchi E.", "minuto": 58 }
+      ]
     },
     {
       "giornata": 17,
@@ -157,7 +259,16 @@
       "casa": "Medla",
       "trasferta": "Sporting Predappio",
       "risultato": "3-2",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Ravaioli M.", "minuto": 39 },
+        { "nome": "Celli M.", "minuto": 50 },
+        { "nome": "Giuffre A.", "minuto": 62 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Abdessamad Charaf", "minuto": 88, "rigore": true },
+        { "nome": "Nicola Rafelli", "minuto": 94 }
+      ]
     },
     {
       "giornata": 18,
@@ -176,7 +287,14 @@
       "casa": "Porto Fuori",
       "trasferta": "Sporting Predappio",
       "risultato": "1-2",
-      "luogo": "Trasferta"
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        { "nome": "Lo Giudice V.", "minuto": 75 }
+      ],
+      "marcatoriTrasferta": [
+        { "nome": "Alessio Ambrogetti", "minuto": 35, "rigore": true },
+        { "nome": "Alessio Ambrogetti", "minuto": 65 }
+      ]
     },
     {
       "giornata": 20,
@@ -185,7 +303,11 @@
       "casa": "Sporting Predappio",
       "trasferta": "Godo",
       "risultato": "1-0",
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        { "nome": "Riccardo Milandri", "minuto": 83 }
+      ],
+      "marcatoriTrasferta": []
     },
     {
       "giornata": 21,

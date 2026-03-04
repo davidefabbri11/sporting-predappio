@@ -53,6 +53,13 @@ export interface StaffMember {
   foto: string;
 }
 
+export interface MatchGoal {
+  nome: string;
+  minuto?: number;
+  rigore?: boolean;
+  autorete?: boolean;
+}
+
 export interface Match {
   giornata: number;
   data: string;
@@ -62,6 +69,8 @@ export interface Match {
   risultato: string | null;
   luogo: string;
   nota?: string;
+  marcatoriCasa?: MatchGoal[];
+  marcatoriTrasferta?: MatchGoal[];
 }
 
 export interface MatchData {
