@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SeasonSwitcher from '../../components/SeasonSwitcher.astro';
+import CalendarView from '../../components/CalendarView.astro';
+import { getAllSeasons, getSeasonLabel, getFirstTeamMatches, getSeasonManifest, isValidSeason } from '../../lib/seasons';
+
+export function getStaticPaths() {
+  const seasons = getAllSeasons();
+  return seasons.map(s => ({ params: { season: s.id } }));
+}
+
+const { season: seasonId } = Astro.params;
+
+if (!isValidSeason(seasonId)) {
+  return Astro.redirect('/calendario');
+}
+
+const seasonLabel = getSeasonLabel(seasonId);
+const matchData = getFirstTeamMatches(seasonId);
+const manifest = getSeasonManifest(seasonId);
+---
+
+<Layout title={`Calendario ${seasonLabel} | Sporting Predappio`} description={`Calendario partite e risultati dell'A.S.D. Sporting Predappio - Stagione ${seasonLabel}.`}>
+  <PageHeader title="Calendario" subtitle={`${manifest?.primaSquadra.categoria ?? ''} · ${manifest?.primaSquadra.girone ?? ''}`}>
+    <p class="text-azzurro-300/60 text-sm mt-2">Stagione {seasonLabel}</p>
+    <SeasonSwitcher currentSeasonId={seasonId} basePath="/calendario" defaultPath="/calendario" />
+  </PageHeader>
+
+  {matchData ? (
+    <CalendarView matchData={matchData} />
+  ) : (
+    <section class="py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">Calendario in aggiornamento</h3>
+        <p class="text-gray-400">Il calendario delle partite verrà aggiornato presto.</p>
+      </div>
+    </section>
+  )}
+</Layout>

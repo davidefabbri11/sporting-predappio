@@ -1,0 +1,68 @@
+{
+  "nome": "A.S.D. Sporting Predappio",
+  "nome_breve": "Sporting Predappio",
+  "fondazione": 2015,
+  "colori": ["Bianco", "Azzurro"],
+  "descrizione_breve": "Squadra di calcio di Predappio, fondata nel 2015. Passione, impegno e spirito di squadra sul campo e fuori.",
+  "storia": "L'A.S.D. Sporting Predappio nasce nel 2015 con l'obiettivo di portare nuova energia al calcio predappiese. Partendo dalla Terza Categoria, la squadra ha saputo crescere anno dopo anno, conquistando la promozione in Seconda e poi in Prima Categoria. Un percorso fatto di passione, sacrificio e forte legame con il territorio. Oggi lo Sporting Predappio milita in Seconda Categoria nel Girone N di Ravenna, continuando a rappresentare con orgoglio la comunità di Predappio.",
+  "presidente": "Claudio Saragoni",
+  "stadio": {
+    "nome": "Stadio Comunale Strocchi-Cavazzoni",
+    "indirizzo": "Via Zara 4, 47016 Predappio (FC)",
+    "coordinate": {
+      "lat": 44.1027,
+      "lng": 11.9815
+    }
+  },
+  "sede": {
+    "indirizzo": "Via dell'Appennino 48, 47121 Forlì (FC)"
+  },
+  "telefono": "338 1326277",
+  "social": {
+    "facebook": "https://www.facebook.com/sportingpredappio",
+    "instagram": "https://www.instagram.com/sportingpredappio/"
+  },
+  "dirigenti": [
+    {
+      "nome": "Claudio Saragoni",
+      "ruolo": "Presidente",
+      "foto": "/images/players/staff_saragoni_claudio.jpg"
+    },
+    {
+      "nome": "Michele Castori",
+      "ruolo": "Dirigente",
+      "foto": "/images/players/staff_castori_michele.jpg"
+    },
+    {
+      "nome": "Mirko Dall'Agata",
+      "ruolo": "Dirigente",
+      "foto": "/images/players/staff_dallagata_mirko.jpg"
+    },
+    {
+      "nome": "Davide Fabbri",
+      "ruolo": "Dirigente",
+      "foto": "/images/players/staff_fabbri_davide.jpg"
+    },
+    {
+      "nome": "Andrea Greggi",
+      "ruolo": "Dirigente",
+      "foto": "/images/players/staff_greggi_andrea.jpg"
+    },
+    {
+      "nome": "Stefano Ricci",
+      "ruolo": "Dirigente",
+      "foto": "/images/players/staff_ricci_stefano.jpg"
+    }
+  ],
+  "storico_categorie": [
+    { "stagione": "2017/2018", "categoria": "3ª Categoria" },
+    { "stagione": "2018/2019", "categoria": "3ª Categoria" },
+    { "stagione": "2019/2020", "categoria": "2ª Categoria" },
+    { "stagione": "2020/2021", "categoria": "2ª Categoria" },
+    { "stagione": "2021/2022", "categoria": "2ª Categoria" },
+    { "stagione": "2022/2023", "categoria": "2ª Categoria" },
+    { "stagione": "2023/2024", "categoria": "1ª Categoria" },
+    { "stagione": "2024/2025", "categoria": "1ª Categoria" },
+    { "stagione": "2025/2026", "categoria": "2ª Categoria" }
+  ]
+}

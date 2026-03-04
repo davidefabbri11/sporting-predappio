@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Roberto Ferrini",
+    "ruolo": "Allenatore",
+    "tipo": "tecnico",
+    "foto": "/images/players/staff_ferrini_roberto.jpg"
+  },
+  {
+    "nome": "Mirko Biorci",
+    "ruolo": "Vice Allenatore",
+    "tipo": "tecnico",
+    "foto": "/images/players/staff_biorci_mirko.jpg"
+  },
+  {
+    "nome": "Francesco Ferrini",
+    "ruolo": "Preparatore Atletico",
+    "tipo": "tecnico",
+    "foto": "/images/players/staff_ferrini_francesco.jpg"
+  },
+  {
+    "nome": "Matteo Garavini",
+    "ruolo": "Preparatore Portieri",
+    "tipo": "tecnico",
+    "foto": "/images/players/staff_garavini_matteo.jpg"
+  },
+  {
+    "nome": "Marco Fabbri",
+    "ruolo": "Massaggiatore",
+    "tipo": "tecnico",
+    "foto": "/images/players/staff_fabbri_marco.jpg"
+  }
+]

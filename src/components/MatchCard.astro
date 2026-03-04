@@ -1,0 +1,83 @@
+---
+interface Props {
+  giornata: number;
+  data: string;
+  ora: string;
+  casa: string;
+  trasferta: string;
+  risultato: string | null;
+  luogo: string;
+  nota?: string;
+}
+
+const { giornata, data, ora, casa, trasferta, risultato, luogo, nota } = Astro.props;
+
+const dataObj = new Date(data + 'T00:00:00');
+const giorno = dataObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
+const isHome = casa === 'Sporting Predappio';
+const played = risultato !== null;
+---
+
+<div class:list={[
+  'group relative bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl card-shimmer',
+  played ? 'border border-gray-100' : 'border border-azzurro-200/50 shadow-md shadow-azzurro-500/5'
+]}>
+  <!-- Top accent line -->
+  <div class:list={[
+    'h-0.5',
+    played ? 'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200' : 'bg-gradient-to-r from-azzurro-400 via-azzurro-500 to-oro-400'
+  ]}></div>
+
+  <div class="flex items-center justify-between px-5 py-2.5 bg-gray-50/80 border-b border-gray-100/80">
+    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Giornata {giornata}</span>
+    <span class="text-xs text-gray-500 font-medium">{giorno} &middot; {ora}</span>
+  </div>
+
+  <div class="p-5">
+    <div class="flex items-center justify-between gap-4">
+      <!-- Casa -->
+      <div class="flex-1 text-right">
+        <p class:list={[
+          'font-heading font-bold text-base tracking-wide',
+          isHome ? 'text-azzurro-600' : 'text-gray-700'
+        ]}>
+          {casa}
+        </p>
+      </div>
+
+      <!-- Risultato / VS -->
+      <div class="shrink-0 text-center">
+        {played ? (
+          <span class="inline-block bg-azzurro-900 text-white font-heading font-bold text-base px-4 py-1.5 rounded-xl shadow-lg shadow-azzurro-900/20">
+            {risultato}
+          </span>
+        ) : nota ? (
+          <span class="inline-block bg-amber-50 text-amber-600 font-heading font-bold text-xs px-4 py-1.5 rounded-xl border border-amber-200/50">
+            {nota}
+          </span>
+        ) : (
+          <span class="inline-block bg-gradient-to-br from-azzurro-500 to-azzurro-600 text-white font-heading font-bold text-xs px-4 py-1.5 rounded-xl shadow-lg shadow-azzurro-500/20">
+            VS
+          </span>
+        )}
+      </div>
+
+      <!-- Trasferta -->
+      <div class="flex-1 text-left">
+        <p class:list={[
+          'font-heading font-bold text-base tracking-wide',
+          !isHome ? 'text-azzurro-600' : 'text-gray-700'
+        ]}>
+          {trasferta}
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-1.5 mt-3 text-xs text-gray-400">
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+      </svg>
+      {luogo}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+{
+  "campionato": {
+    "nome": "2ª Categoria",
+    "girone": "Girone N Ravenna",
+    "stagione": "2025/2026",
+    "regione": "Emilia-Romagna"
+  },
+  "partite": [
+    {
+      "giornata": 1,
+      "data": "2025-09-13",
+      "ora": "15:30",
+      "casa": "S. Colombano Italtex",
+      "trasferta": "Sporting Predappio",
+      "risultato": "0-1",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 2,
+      "data": "2025-09-21",
+      "ora": "15:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Low Street Ponte N.",
+      "risultato": "0-1",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 3,
+      "data": "2025-09-28",
+      "ora": "15:30",
+      "casa": "Real",
+      "trasferta": "Sporting Predappio",
+      "risultato": "2-5",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 4,
+      "data": "2025-10-05",
+      "ora": "15:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Medla",
+      "risultato": "3-2",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 5,
+      "data": "2025-10-12",
+      "ora": "15:30",
+      "casa": "Carpinello",
+      "trasferta": "Sporting Predappio",
+      "risultato": "1-0",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 6,
+      "data": "2025-10-19",
+      "ora": "15:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Porto Fuori",
+      "risultato": "4-2",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 7,
+      "data": "2025-10-26",
+      "ora": "15:30",
+      "casa": "Godo",
+      "trasferta": "Sporting Predappio",
+      "risultato": "1-2",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 8,
+      "data": "2025-11-02",
+      "ora": "14:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Marina Calcio",
+      "risultato": "0-0",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 9,
+      "data": "2025-11-09",
+      "ora": "14:30",
+      "casa": "F. Zarattini",
+      "trasferta": "Sporting Predappio",
+      "risultato": "2-0",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 10,
+      "data": "2025-11-15",
+      "ora": "14:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "San Pancrazio",
+      "risultato": "1-1",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 11,
+      "data": "2025-11-23",
+      "ora": "14:30",
+      "casa": "G.S. Romagna",
+      "trasferta": "Sporting Predappio",
+      "risultato": "0-3",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 12,
+      "data": "2025-11-30",
+      "ora": "14:30",
+      "casa": "S. Zaccaria",
+      "trasferta": "Sporting Predappio",
+      "risultato": "2-0",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 13,
+      "data": "2025-12-07",
+      "ora": "14:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Punta Marina",
+      "risultato": "4-1",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 14,
+      "data": "2026-01-18",
+      "ora": "14:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "S. Colombano Italtex",
+      "risultato": "2-1",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 15,
+      "data": "2026-01-25",
+      "ora": "14:30",
+      "casa": "Low Street Ponte N.",
+      "trasferta": "Sporting Predappio",
+      "risultato": "1-2",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 16,
+      "data": "2026-01-31",
+      "ora": "14:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Real",
+      "risultato": "1-1",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 17,
+      "data": "2026-02-08",
+      "ora": "14:30",
+      "casa": "Medla",
+      "trasferta": "Sporting Predappio",
+      "risultato": "3-2",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 18,
+      "data": "2026-03-11",
+      "ora": "20:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Carpinello",
+      "risultato": null,
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "nota": "Rinviata"
+    },
+    {
+      "giornata": 19,
+      "data": "2026-02-22",
+      "ora": "14:30",
+      "casa": "Porto Fuori",
+      "trasferta": "Sporting Predappio",
+      "risultato": "1-2",
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 20,
+      "data": "2026-03-01",
+      "ora": "14:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "Godo",
+      "risultato": "1-0",
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 21,
+      "data": "2026-03-08",
+      "ora": "14:30",
+      "casa": "Marina Calcio",
+      "trasferta": "Sporting Predappio",
+      "risultato": null,
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 22,
+      "data": "2026-03-15",
+      "ora": "15:00",
+      "casa": "Sporting Predappio",
+      "trasferta": "F. Zarattini",
+      "risultato": null,
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 23,
+      "data": "2026-03-22",
+      "ora": "15:00",
+      "casa": "San Pancrazio",
+      "trasferta": "Sporting Predappio",
+      "risultato": null,
+      "luogo": "Trasferta"
+    },
+    {
+      "giornata": 24,
+      "data": "2026-03-29",
+      "ora": "15:00",
+      "casa": "Sporting Predappio",
+      "trasferta": "G.S. Romagna",
+      "risultato": null,
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 25,
+      "data": "2026-04-12",
+      "ora": "15:30",
+      "casa": "Sporting Predappio",
+      "trasferta": "S. Zaccaria",
+      "risultato": null,
+      "luogo": "Stadio Strocchi-Cavazzoni"
+    },
+    {
+      "giornata": 26,
+      "data": "2026-04-19",
+      "ora": "15:30",
+      "casa": "Punta Marina",
+      "trasferta": "Sporting Predappio",
+      "risultato": null,
+      "luogo": "Trasferta"
+    }
+  ]
+}

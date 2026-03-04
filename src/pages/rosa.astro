@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SeasonSwitcher from '../components/SeasonSwitcher.astro';
+import RosterView from '../components/RosterView.astro';
+import { getCurrentSeasonId, getSeasonLabel, getFirstTeamRoster, getFirstTeamStaff } from '../lib/seasons';
+
+const seasonId = getCurrentSeasonId();
+const seasonLabel = getSeasonLabel(seasonId);
+const team = getFirstTeamRoster(seasonId);
+const staff = getFirstTeamStaff(seasonId);
+---
+
+<Layout title={`Rosa ${seasonLabel} | Sporting Predappio`} description={`La rosa e lo staff tecnico dell'A.S.D. Sporting Predappio per la stagione ${seasonLabel}.`}>
+  <PageHeader title="La Rosa" subtitle={`Stagione ${seasonLabel}`}>
+    <SeasonSwitcher currentSeasonId={seasonId} basePath="/rosa" />
+  </PageHeader>
+
+  <RosterView team={team} staff={staff} />
+</Layout>

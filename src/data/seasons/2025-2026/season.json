@@ -1,0 +1,21 @@
+{
+  "id": "2025-2026",
+  "label": "2025/2026",
+  "primaSquadra": {
+    "categoria": "2ª Categoria",
+    "girone": "Girone N Ravenna",
+    "regione": "Emilia-Romagna"
+  },
+  "giovanili": [
+    { "id": "allievi", "nome": "Allievi U17", "annate": "2009/2010/2011" },
+    { "id": "giovanissimi", "nome": "Giovanissimi U14", "annate": "2012/2013" },
+    { "id": "esordienti", "nome": "Esordienti", "annate": "2013/2014" },
+    { "id": "pulcini-2", "nome": "Pulcini 2° anno", "annate": "2015/2016" },
+    { "id": "pulcini-1", "nome": "Pulcini 1° anno", "annate": "2016/2017" }
+  ],
+  "responsabileGiovanili": {
+    "nome": "Gianni Flamigni",
+    "ruolo": "Responsabile Settore Giovanile",
+    "foto": ""
+  }
+}

@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="relative overflow-hidden -mt-[72px]">
+  <div class="absolute inset-0 mesh-gradient"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(8,37,54,0.5)_100%)]"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-28 md:py-32 text-center">
+    <h1 class="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl text-white mb-4 tracking-[0.1em]">{title}</h1>
+    {subtitle && <p class="text-azzurro-200/80 text-lg">{subtitle}</p>}
+    <slot />
+  </div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <div class="h-px bg-gradient-to-r from-transparent via-azzurro-400/30 to-transparent"></div>
+    <div class="h-16 bg-gradient-to-t from-[#fafbfc] to-transparent"></div>
+  </div>
+</section>

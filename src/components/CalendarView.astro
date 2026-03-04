@@ -1,0 +1,99 @@
+---
+import MatchCard from './MatchCard.astro';
+import type { MatchData } from '../lib/seasons';
+
+interface Props {
+  matchData: MatchData;
+}
+
+const { matchData } = Astro.props;
+
+const partite = matchData.partite;
+const prossime = partite.filter(p => p.risultato === null && !p.nota);
+const rinviate = partite.filter(p => p.risultato === null && p.nota);
+const giocate = partite.filter(p => p.risultato !== null).reverse();
+---
+
+<!-- Info Campionato -->
+<section class="py-6 bg-white border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 bg-azzurro-50 rounded-lg flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-azzurro-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <span class="text-gray-600"><strong class="text-gray-900">{matchData.campionato.nome}</strong></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 bg-azzurro-50 rounded-lg flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-azzurro-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          </svg>
+        </div>
+        <span class="text-gray-600">{matchData.campionato.regione}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 bg-azzurro-50 rounded-lg flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-azzurro-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <span class="text-gray-600">{matchData.campionato.girone}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prossime Partite -->
+{prossime.length > 0 && (
+  <section class="py-14 bg-[#fafbfc]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-3 mb-8 reveal">
+        <div class="w-1 h-8 bg-gradient-to-b from-azzurro-400 to-azzurro-600 rounded-full"></div>
+        <h2 class="font-heading font-extrabold text-2xl md:text-3xl tracking-wide">Prossime Partite</h2>
+        <span class="text-sm text-gray-300 font-medium ml-1">({prossime.length})</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal stagger-children">
+        {prossime.map(match => (
+          <MatchCard {...match} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Risultati -->
+{giocate.length > 0 && (
+  <section class="py-14 bg-white relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-3 mb-8 reveal">
+        <div class="w-1 h-8 bg-gradient-to-b from-gray-300 to-gray-500 rounded-full"></div>
+        <h2 class="font-heading font-extrabold text-2xl md:text-3xl tracking-wide">Risultati</h2>
+        <span class="text-sm text-gray-300 font-medium ml-1">({giocate.length})</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal stagger-children">
+        {giocate.map(match => (
+          <MatchCard {...match} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Messaggio se vuoto -->
+{partite.length === 0 && (
+  <section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <div class="w-18 h-18 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-gray-100">
+        <svg class="w-9 h-9 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">Calendario in aggiornamento</h3>
+      <p class="text-gray-400">Il calendario delle partite verrà aggiornato presto. Seguici sui social per restare informato!</p>
+    </div>
+  </section>
+)}

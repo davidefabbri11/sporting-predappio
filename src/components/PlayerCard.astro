@@ -1,0 +1,45 @@
+---
+interface Props {
+  nome: string;
+  ruolo: string;
+  foto?: string;
+}
+
+const { nome, ruolo, foto } = Astro.props;
+
+const ruoloConfig: Record<string, { bg: string; gradient: string; initial: string }> = {
+  'Portiere': { bg: 'bg-amber-500', gradient: 'from-amber-400 to-amber-600', initial: 'P' },
+  'Difensore': { bg: 'bg-emerald-500', gradient: 'from-emerald-400 to-emerald-600', initial: 'D' },
+  'Centrocampista': { bg: 'bg-azzurro-500', gradient: 'from-azzurro-400 to-azzurro-600', initial: 'C' },
+  'Attaccante': { bg: 'bg-red-500', gradient: 'from-red-400 to-red-600', initial: 'A' },
+};
+
+const config = ruoloConfig[ruolo] || { bg: 'bg-gray-500', gradient: 'from-gray-400 to-gray-600', initial: '?' };
+---
+
+<div class="group relative bg-white rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-200/60 card-shimmer">
+  <!-- Accent bar with gradient -->
+  <div class={`h-1 bg-gradient-to-r ${config.gradient}`}></div>
+
+  <div class="p-4 flex items-center gap-4">
+    {foto ? (
+      <div class="relative">
+        <div class={`absolute inset-0 ${config.bg} rounded-xl blur-md opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+        <img
+          src={foto}
+          alt={nome}
+          class="w-14 h-14 rounded-xl object-cover object-top shrink-0 relative ring-2 ring-gray-100 group-hover:ring-azzurro-200 transition-all duration-300"
+          loading="lazy"
+        />
+      </div>
+    ) : (
+      <div class={`w-14 h-14 bg-gradient-to-br ${config.gradient} rounded-xl flex items-center justify-center text-white font-heading font-bold text-xl shrink-0 shadow-lg shadow-gray-200/50`}>
+        {config.initial}
+      </div>
+    )}
+    <div class="min-w-0">
+      <p class="font-heading font-bold text-gray-900 truncate text-lg tracking-wide">{nome}</p>
+      <p class="text-sm text-gray-400 font-medium">{ruolo}</p>
+    </div>
+  </div>
+</div>

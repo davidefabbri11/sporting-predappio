@@ -1,0 +1,56 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+import SeasonSwitcher from '../../../components/SeasonSwitcher.astro';
+import RosterView from '../../../components/RosterView.astro';
+import { getAllSeasons, getSeasonLabel, getSeasonManifest, getYouthRoster, getYouthStaff, isValidSeason } from '../../../lib/seasons';
+
+export function getStaticPaths() {
+  const seasons = getAllSeasons();
+  const paths: { params: { season: string; category: string } }[] = [];
+
+  for (const s of seasons) {
+    const manifest = getSeasonManifest(s.id);
+    if (manifest?.giovanili) {
+      for (const cat of manifest.giovanili) {
+        paths.push({ params: { season: s.id, category: cat.id } });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { season: seasonId, category: categoryId } = Astro.params;
+
+if (!isValidSeason(seasonId)) {
+  return Astro.redirect('/settore-giovanile');
+}
+
+const seasonLabel = getSeasonLabel(seasonId);
+const manifest = getSeasonManifest(seasonId);
+const categoryInfo = manifest?.giovanili.find(c => c.id === categoryId);
+
+if (!categoryInfo) {
+  return Astro.redirect(`/settore-giovanile/${seasonId}`);
+}
+
+const team = getYouthRoster(seasonId, categoryId);
+const staff = getYouthStaff(seasonId, categoryId);
+---
+
+<Layout title={`${categoryInfo.nome} ${seasonLabel} | Sporting Predappio`} description={`Rosa ${categoryInfo.nome} (${categoryInfo.annate}) dell'A.S.D. Sporting Predappio - Stagione ${seasonLabel}.`}>
+  <PageHeader title={categoryInfo.nome} subtitle={`Annate ${categoryInfo.annate} · Stagione ${seasonLabel}`}>
+    <SeasonSwitcher currentSeasonId={seasonId} basePath={`/settore-giovanile`} defaultPath="/settore-giovanile" />
+    <div class="mt-3">
+      <a href={`/settore-giovanile/${seasonId}`} class="inline-flex items-center gap-1.5 text-azzurro-200/60 hover:text-white text-sm transition-colors duration-300">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Tutte le categorie
+      </a>
+    </div>
+  </PageHeader>
+
+  <RosterView team={team} staff={staff} />
+</Layout>

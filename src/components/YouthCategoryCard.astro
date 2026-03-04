@@ -1,0 +1,62 @@
+---
+interface Props {
+  id: string;
+  nome: string;
+  annate: string;
+  seasonId: string;
+  playerCount: number;
+  coach?: string;
+}
+
+const { id, nome, annate, seasonId, playerCount, coach } = Astro.props;
+
+const categoryColors: Record<string, { gradient: string; shadow: string; icon: string }> = {
+  allievi: { gradient: 'from-azzurro-500 to-azzurro-700', shadow: 'shadow-azzurro-500/20', icon: 'from-azzurro-400 to-azzurro-600' },
+  giovanissimi: { gradient: 'from-emerald-500 to-emerald-700', shadow: 'shadow-emerald-500/20', icon: 'from-emerald-400 to-emerald-600' },
+  esordienti: { gradient: 'from-violet-500 to-violet-700', shadow: 'shadow-violet-500/20', icon: 'from-violet-400 to-violet-600' },
+  'pulcini-2': { gradient: 'from-amber-500 to-amber-700', shadow: 'shadow-amber-500/20', icon: 'from-amber-400 to-amber-600' },
+  'pulcini-1': { gradient: 'from-orange-500 to-orange-700', shadow: 'shadow-orange-500/20', icon: 'from-orange-400 to-orange-600' },
+};
+
+const colors = categoryColors[id] ?? categoryColors.allievi;
+---
+
+<a
+  href={`/settore-giovanile/${seasonId}/${id}`}
+  class="group relative overflow-hidden bg-white rounded-3xl p-7 border border-gray-100 hover:shadow-2xl hover:shadow-gray-200/60 transition-all duration-500 hover:-translate-y-1 card-shimmer"
+>
+  <!-- Top accent -->
+  <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colors.gradient}`}></div>
+
+  <!-- Decorative circle -->
+  <div class="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-gray-100 transition-colors duration-300"></div>
+
+  <div class="relative">
+    <!-- Icon -->
+    <div class={`w-14 h-14 bg-gradient-to-br ${colors.icon} rounded-2xl flex items-center justify-center mb-5 ${colors.shadow} shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+      <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    </div>
+
+    <!-- Category info -->
+    <h3 class="font-heading font-bold text-2xl text-gray-900 mb-1 tracking-wide">{nome}</h3>
+    <p class="text-gray-400 text-sm mb-1">Annate {annate}</p>
+    {coach && (
+      <p class="text-gray-400 text-xs mb-1">
+        <span class="text-gray-300">All.</span> {coach}
+      </p>
+    )}
+    {playerCount > 0 && (
+      <p class="text-gray-300 text-xs">{playerCount} giocatori</p>
+    )}
+
+    <!-- CTA -->
+    <div class="text-sm font-semibold text-azzurro-500 flex items-center gap-1.5 group-hover:gap-3 transition-all duration-300 mt-5">
+      Vedi rosa
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import MatchCard from '../components/MatchCard.astro';
+import club from '../data/club.json';
+import { getCurrentSeasonId, getFirstTeamMatches } from '../lib/seasons';
+
+const seasonId = getCurrentSeasonId();
+const matchData = getFirstTeamMatches(seasonId);
+
+const partite = matchData?.partite ?? [];
+const prossime = partite.filter(p => p.risultato === null && !p.nota).slice(0, 2);
+const giocate = partite.filter(p => p.risultato !== null).slice(-3);
+---
+
+<Layout title="Sporting Predappio | Calcio">
+  <Hero />
+
+  <!-- Prossime Partite -->
+  {prossime.length > 0 && (
+    <section class="py-20 bg-[#fafbfc] relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-flex items-center gap-2 bg-azzurro-50 text-azzurro-600 text-xs font-bold uppercase tracking-[0.15em] px-4 py-2 rounded-full mb-4 border border-azzurro-100">
+            <span class="w-1.5 h-1.5 rounded-full bg-azzurro-500 animate-pulse"></span>
+            Prossimamente
+          </span>
+          <h2 class="font-heading font-extrabold text-4xl md:text-5xl text-gray-900">Prossime Partite</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto reveal stagger-children">
+          {prossime.map(match => (
+            <MatchCard {...match} />
+          ))}
+        </div>
+        <div class="text-center mt-10 reveal">
+          <a href="/calendario" class="group inline-flex items-center gap-2 text-azzurro-500 hover:text-azzurro-600 font-semibold transition-all duration-300">
+            Vedi calendario completo
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Ultimi Risultati -->
+  {giocate.length > 0 && (
+    <section class="py-20 bg-white relative">
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-flex items-center gap-2 bg-gray-100 text-gray-500 text-xs font-bold uppercase tracking-[0.15em] px-4 py-2 rounded-full mb-4 border border-gray-200">
+            Risultati
+          </span>
+          <h2 class="font-heading font-extrabold text-4xl md:text-5xl text-gray-900">Ultime Partite</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto reveal stagger-children">
+          {giocate.map(match => (
+            <MatchCard {...match} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Info Rapide -->
+  <section class="py-20 bg-[#fafbfc] relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal stagger-children">
+        <!-- Card Squadra -->
+        <a href="/rosa" class="group relative overflow-hidden bg-gradient-to-br from-azzurro-600 via-azzurro-500 to-azzurro-700 rounded-3xl p-7 text-white hover:shadow-2xl hover:shadow-azzurro-500/20 transition-all duration-500 hover:-translate-y-1 card-shimmer">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-5 border border-white/10">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-2xl mb-2 tracking-wide">La Squadra</h3>
+            <p class="text-azzurro-100/80 text-sm mb-5">Scopri la rosa e lo staff tecnico</p>
+            <div class="text-sm font-semibold flex items-center gap-1.5 group-hover:gap-3 transition-all duration-300">
+              Vai alla rosa
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card Chi Siamo -->
+        <a href="/chi-siamo" class="group relative overflow-hidden bg-gradient-to-br from-azzurro-900 via-azzurro-950 to-gray-900 rounded-3xl p-7 text-white hover:shadow-2xl hover:shadow-azzurro-900/20 transition-all duration-500 hover:-translate-y-1 card-shimmer">
+          <div class="absolute bottom-0 left-0 w-40 h-40 bg-oro-500/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-5 border border-white/5">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-2xl mb-2 tracking-wide">Il Club</h3>
+            <p class="text-gray-400 text-sm mb-5">La nostra storia dal 2015</p>
+            <div class="text-sm font-semibold flex items-center gap-1.5 group-hover:gap-3 transition-all duration-300">
+              Scopri di più
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card Social -->
+        <div class="group relative bg-white rounded-3xl p-7 border border-gray-100 hover:shadow-2xl hover:shadow-gray-200/60 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-azzurro-400 via-oro-400 to-azzurro-400"></div>
+          <div class="w-14 h-14 bg-gradient-to-br from-azzurro-50 to-azzurro-100 rounded-2xl flex items-center justify-center mb-5 border border-azzurro-100">
+            <svg class="w-7 h-7 text-azzurro-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2 tracking-wide">Seguici</h3>
+          <p class="text-gray-400 text-sm mb-5">Resta aggiornato sui social</p>
+          <div class="flex gap-3">
+            <a href={club.social.facebook} target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white text-sm font-semibold py-3 rounded-xl hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all duration-300 hover:-translate-y-0.5">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href={club.social.instagram} target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold py-3 rounded-xl hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-0.5">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
