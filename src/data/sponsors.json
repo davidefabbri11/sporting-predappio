@@ -34,5 +34,12 @@
     "logo": "/images/sponsors/magnani-legnami.png",
     "url": "https://www.magnanilegnamimeldola.it/",
     "tier": "main"
+  },
+  {
+    "nome": "Macron",
+    "logo": "/images/sponsors/macron.png",
+    "url": "https://www.macron.com/",
+    "shopUrl": "https://clubshop.macron.com/ravenna/sporting-predappio",
+    "tier": "technical"
   }
 ]
