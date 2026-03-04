@@ -9,7 +9,7 @@ const seasonId = getCurrentSeasonId();
 const matchData = getFirstTeamMatches(seasonId);
 
 const partite = matchData?.partite ?? [];
-const prossime = partite.filter(p => p.risultato === null && !p.nota).slice(0, 2);
+const prossime = partite.filter(p => p.risultato === null && !p.nota).sort((a, b) => a.data.localeCompare(b.data)).slice(0, 2);
 const giocate = partite.filter(p => p.risultato !== null).slice(-3);
 ---
 
