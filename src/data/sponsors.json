@@ -1,0 +1,38 @@
+[
+  {
+    "nome": "Cbweed",
+    "logo": "/images/sponsors/cbweed.png",
+    "url": "https://cbweed.com/",
+    "tier": "main"
+  },
+  {
+    "nome": "Gingillino",
+    "logo": "/images/sponsors/gingillino.png",
+    "url": "https://www.instagram.com/gingillino_ilgin_dipredappio/?hl=it",
+    "tier": "main"
+  },
+  {
+    "nome": "Cappelletti Vanni Ferramenta",
+    "logo": "/images/sponsors/cappelletti-vanni.png",
+    "url": "https://vannicappelletti.it/",
+    "tier": "main"
+  },
+  {
+    "nome": "Associazione Dedicata ad un Angelo",
+    "logo": "/images/sponsors/dedicata-ad-un-angelo.png",
+    "url": "https://www.instagram.com/assdedicataadunangelo/",
+    "tier": "main"
+  },
+  {
+    "nome": "Venturelli",
+    "logo": "/images/sponsors/venturelli.png",
+    "url": "http://www.venturelliromolo.it/",
+    "tier": "main"
+  },
+  {
+    "nome": "Magnani Legnami Meldola",
+    "logo": "/images/sponsors/magnani-legnami.png",
+    "url": "https://www.magnanilegnamimeldola.it/",
+    "tier": "main"
+  }
+]

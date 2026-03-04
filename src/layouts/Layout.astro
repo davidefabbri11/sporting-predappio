@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -30,6 +31,7 @@ const { title, description = 'A.S.D. Sporting Predappio - Squadra di calcio di P
       <slot />
     </main>
     <Footer />
+    <CookieBanner />
 
     <script>
       // Scroll reveal observer
