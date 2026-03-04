@@ -77,42 +77,44 @@ const technicalPartners = sponsors.filter(s => s.tier === 'technical');
           </span>
           <h2 class="font-heading font-extrabold text-4xl md:text-5xl text-gray-900">Partner Tecnico</h2>
         </div>
-        <div class="flex justify-center reveal">
+        <div class="flex flex-col items-center gap-4 reveal">
           {technicalPartners.map(partner => (
-            <a
-              href={partner.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group bg-white rounded-3xl p-10 border border-gray-100 hover:shadow-xl hover:border-azzurro-200/50 hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center max-w-sm w-full"
-            >
-              <div class="w-full h-36 flex items-center justify-center mb-6 rounded-2xl bg-[#fafbfc] border border-gray-50 group-hover:border-azzurro-100 transition-all duration-300 p-6">
-                <img
-                  src={partner.logo}
-                  alt={partner.nome}
-                  class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <h3 class="font-heading font-bold text-xl text-gray-900 group-hover:text-azzurro-600 transition-colors duration-300">{partner.nome}</h3>
-              <span class="inline-flex items-center gap-1 text-azzurro-500 text-sm font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-                Visita il sito
-                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </span>
-            </a>
-            {partner.shopUrl && (
+            <Fragment>
               <a
-                href={partner.shopUrl}
+                href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="mt-4 inline-flex items-center gap-2 bg-azzurro-500 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-azzurro-400 hover:shadow-lg hover:shadow-azzurro-500/20 transition-all duration-300 hover:-translate-y-0.5"
+                class="group bg-white rounded-3xl p-10 border border-gray-100 hover:shadow-xl hover:border-azzurro-200/50 hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center max-w-sm w-full"
               >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-                Vai allo Shop
+                <div class="w-full h-36 flex items-center justify-center mb-6 rounded-2xl bg-[#fafbfc] border border-gray-50 group-hover:border-azzurro-100 transition-all duration-300 p-6">
+                  <img
+                    src={partner.logo}
+                    alt={partner.nome}
+                    class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <h3 class="font-heading font-bold text-xl text-gray-900 group-hover:text-azzurro-600 transition-colors duration-300">{partner.nome}</h3>
+                <span class="inline-flex items-center gap-1 text-azzurro-500 text-sm font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                  Visita il sito
+                  <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </span>
               </a>
-            )}
+              {partner.shopUrl && (
+                <a
+                  href={partner.shopUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 bg-azzurro-500 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-azzurro-400 hover:shadow-lg hover:shadow-azzurro-500/20 transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  Vai allo Shop
+                </a>
+              )}
+            </Fragment>
           ))}
         </div>
       </div>
