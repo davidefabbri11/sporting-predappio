@@ -9,7 +9,7 @@ interface Props {
 const { matchData } = Astro.props;
 
 const partite = matchData.partite;
-const prossime = partite.filter(p => p.risultato === null && !p.nota);
+const prossime = partite.filter(p => p.risultato === null && !p.nota).sort((a, b) => a.data.localeCompare(b.data));
 const rinviate = partite.filter(p => p.risultato === null && p.nota);
 const giocate = partite.filter(p => p.risultato !== null).reverse();
 ---

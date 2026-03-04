@@ -55,8 +55,10 @@
     }
   ],
   "storico_categorie": [
+    { "stagione": "2015/2016", "categoria": "3ª Categoria" },
+    { "stagione": "2016/2017", "categoria": "3ª Categoria" },
     { "stagione": "2017/2018", "categoria": "3ª Categoria" },
-    { "stagione": "2018/2019", "categoria": "3ª Categoria" },
+    { "stagione": "2018/2019", "categoria": "2ª Categoria" },
     { "stagione": "2019/2020", "categoria": "2ª Categoria" },
     { "stagione": "2020/2021", "categoria": "2ª Categoria" },
     { "stagione": "2021/2022", "categoria": "2ª Categoria" },
