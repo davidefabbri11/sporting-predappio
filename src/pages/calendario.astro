@@ -3,11 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import SeasonSwitcher from '../components/SeasonSwitcher.astro';
 import CalendarView from '../components/CalendarView.astro';
-import { getCurrentSeasonId, getSeasonLabel, getFirstTeamMatches, getSeasonManifest } from '../lib/seasons';
+import ClassificaView from '../components/ClassificaView.astro';
+import { getCurrentSeasonId, getSeasonLabel, getFirstTeamMatches, getFirstTeamClassifica, getSeasonManifest } from '../lib/seasons';
 
 const seasonId = getCurrentSeasonId();
 const seasonLabel = getSeasonLabel(seasonId);
 const matchData = getFirstTeamMatches(seasonId);
+const classificaData = getFirstTeamClassifica(seasonId);
 const manifest = getSeasonManifest(seasonId);
 ---
 
@@ -16,6 +18,8 @@ const manifest = getSeasonManifest(seasonId);
     <p class="text-azzurro-300/60 text-sm mt-2">Stagione {seasonLabel}</p>
     <SeasonSwitcher currentSeasonId={seasonId} basePath="/calendario" />
   </PageHeader>
+
+  {classificaData && <ClassificaView data={classificaData} />}
 
   {matchData ? (
     <CalendarView matchData={matchData} />

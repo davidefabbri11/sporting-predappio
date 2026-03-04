@@ -11,6 +11,7 @@ const seasonManifests = import.meta.glob('../data/seasons/*/season.json', { eage
 const firstTeamRosters = import.meta.glob('../data/seasons/*/prima-squadra/team.json', { eager: true });
 const firstTeamStaffs = import.meta.glob('../data/seasons/*/prima-squadra/staff.json', { eager: true });
 const firstTeamMatches = import.meta.glob('../data/seasons/*/prima-squadra/matches.json', { eager: true });
+const firstTeamClassifica = import.meta.glob('../data/seasons/*/prima-squadra/classifica.json', { eager: true });
 const youthRosters = import.meta.glob('../data/seasons/*/giovanili/*/team.json', { eager: true });
 const youthStaffs = import.meta.glob('../data/seasons/*/giovanili/*/staff.json', { eager: true });
 
@@ -73,6 +74,31 @@ export interface MatchData {
   partite: Match[];
 }
 
+export interface ClassificaEntry {
+  pos: number;
+  squadra: string;
+  punti: number;
+  pg: number;
+  v: number;
+  n: number;
+  p: number;
+  gf: number;
+  gs: number;
+}
+
+export interface Marcatore {
+  nome: string;
+  gol: number;
+  rigori?: number;
+}
+
+export interface ClassificaData {
+  aggiornamento: string;
+  giornata: number;
+  classifica: ClassificaEntry[];
+  marcatori: Marcatore[];
+}
+
 // Helper to resolve glob results by season ID
 function findBySeasonId<T>(globResult: Record<string, any>, seasonId: string): T | null {
   const key = Object.keys(globResult).find(k => k.includes(`/${seasonId}/`));
@@ -117,6 +143,11 @@ export function getFirstTeamStaff(seasonId: string): StaffMember[] {
 /** Get first team match data */
 export function getFirstTeamMatches(seasonId: string): MatchData | null {
   return findBySeasonId<MatchData>(firstTeamMatches, seasonId);
+}
+
+/** Get first team classifica/standings data */
+export function getFirstTeamClassifica(seasonId: string): ClassificaData | null {
+  return findBySeasonId<ClassificaData>(firstTeamClassifica, seasonId);
 }
 
 /** Get youth category roster */
