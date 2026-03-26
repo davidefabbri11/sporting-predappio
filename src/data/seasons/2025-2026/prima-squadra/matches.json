@@ -8,7 +8,7 @@
   "partite": [
     {
       "giornata": 1,
-      "data": "2025-09-13",
+      "data": "2025-09-14",
       "ora": "15:30",
       "casa": "S. Colombano Italtex",
       "trasferta": "Sporting Predappio",
@@ -16,7 +16,10 @@
       "luogo": "Trasferta",
       "marcatoriCasa": [],
       "marcatoriTrasferta": [
-        { "nome": "Davide Valtancoli", "minuto": 84 }
+        {
+          "nome": "Davide Valtancoli",
+          "minuto": 84
+        }
       ]
     },
     {
@@ -29,7 +32,10 @@
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [],
       "marcatoriTrasferta": [
-        { "nome": "Diop B.", "minuto": 24 }
+        {
+          "nome": "Diop B.",
+          "minuto": 24
+        }
       ]
     },
     {
@@ -41,15 +47,36 @@
       "risultato": "2-5",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Bance A.", "minuto": 2 },
-        { "nome": "Cavina F.", "minuto": 34 }
+        {
+          "nome": "Bance A.",
+          "minuto": 2
+        },
+        {
+          "nome": "Cavina F.",
+          "minuto": 34
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Alessio Ambrogetti", "minuto": 59 },
-        { "nome": "Mattia Valentini", "minuto": 60 },
-        { "nome": "Nicola Sansovini", "minuto": 70 },
-        { "nome": "Cesare Camanzi", "minuto": 80 },
-        { "nome": "Alessio Ambrogetti", "minuto": 91 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 59
+        },
+        {
+          "nome": "Mattia Valentini",
+          "minuto": 60
+        },
+        {
+          "nome": "Nicola Sansovini",
+          "minuto": 70
+        },
+        {
+          "nome": "Cesare Camanzi",
+          "minuto": 80
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 91
+        }
       ]
     },
     {
@@ -61,13 +88,28 @@
       "risultato": "3-2",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Alessio Ambrogetti", "minuto": 17 },
-        { "nome": "Francesco Casadei", "minuto": 40 },
-        { "nome": "Glauco Argentino", "minuto": 50 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 17
+        },
+        {
+          "nome": "Francesco Casadei",
+          "minuto": 40
+        },
+        {
+          "nome": "Glauco Argentino",
+          "minuto": 50
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Vaccaro C.", "minuto": 37 },
-        { "nome": "Celli M.", "minuto": 56 }
+        {
+          "nome": "Vaccaro C.",
+          "minuto": 37
+        },
+        {
+          "nome": "Celli M.",
+          "minuto": 56
+        }
       ]
     },
     {
@@ -79,7 +121,10 @@
       "risultato": "1-0",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Masotti P.", "minuto": 21 }
+        {
+          "nome": "Masotti P.",
+          "minuto": 21
+        }
       ],
       "marcatoriTrasferta": []
     },
@@ -92,14 +137,34 @@
       "risultato": "4-2",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Alessio Ambrogetti", "minuto": 12, "rigore": true },
-        { "nome": "Davide Valtancoli", "minuto": 30 },
-        { "nome": "Mattia Valentini", "minuto": 38 },
-        { "nome": "Mattia Valentini", "minuto": 40 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 12,
+          "rigore": true
+        },
+        {
+          "nome": "Davide Valtancoli",
+          "minuto": 30
+        },
+        {
+          "nome": "Mattia Valentini",
+          "minuto": 38
+        },
+        {
+          "nome": "Mattia Valentini",
+          "minuto": 40
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Ardagna A.", "minuto": 20, "rigore": true },
-        { "nome": "Greco M.", "minuto": 42 }
+        {
+          "nome": "Ardagna A.",
+          "minuto": 20,
+          "rigore": true
+        },
+        {
+          "nome": "Greco M.",
+          "minuto": 42
+        }
       ]
     },
     {
@@ -111,11 +176,21 @@
       "risultato": "1-2",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Traorè M.", "minuto": 84 }
+        {
+          "nome": "Traorè M.",
+          "minuto": 84
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Alessio Ambrogetti", "minuto": 53, "rigore": true },
-        { "nome": "Abdessamad Charaf", "minuto": 79 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 53,
+          "rigore": true
+        },
+        {
+          "nome": "Abdessamad Charaf",
+          "minuto": 79
+        }
       ]
     },
     {
@@ -138,24 +213,37 @@
       "risultato": "2-0",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Glauco Argentino", "minuto": 18, "autorete": true },
-        { "nome": "Sabbadini C.", "minuto": 83 }
+        {
+          "nome": "Glauco Argentino",
+          "minuto": 18,
+          "autorete": true
+        },
+        {
+          "nome": "Sabbadini C.",
+          "minuto": 83
+        }
       ],
       "marcatoriTrasferta": []
     },
     {
       "giornata": 10,
-      "data": "2025-11-15",
+      "data": "2025-11-16",
       "ora": "14:30",
       "casa": "Sporting Predappio",
       "trasferta": "San Pancrazio",
       "risultato": "1-1",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Alessio Ambrogetti", "minuto": 88 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 88
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Grigor F.", "minuto": 63 }
+        {
+          "nome": "Grigor F.",
+          "minuto": 63
+        }
       ]
     },
     {
@@ -168,9 +256,18 @@
       "luogo": "Trasferta",
       "marcatoriCasa": [],
       "marcatoriTrasferta": [
-        { "nome": "Cesare Camanzi", "minuto": 30 },
-        { "nome": "Glauco Argentino", "minuto": 66 },
-        { "nome": "Alessio Ambrogetti", "minuto": 72 }
+        {
+          "nome": "Cesare Camanzi",
+          "minuto": 30
+        },
+        {
+          "nome": "Glauco Argentino",
+          "minuto": 66
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 72
+        }
       ]
     },
     {
@@ -182,8 +279,14 @@
       "risultato": "2-0",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Fabbri E.", "minuto": 25 },
-        { "nome": "Bissi N.", "minuto": 37 }
+        {
+          "nome": "Fabbri E.",
+          "minuto": 25
+        },
+        {
+          "nome": "Bissi N.",
+          "minuto": 37
+        }
       ],
       "marcatoriTrasferta": []
     },
@@ -196,13 +299,28 @@
       "risultato": "4-1",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Cesare Camanzi", "minuto": 5 },
-        { "nome": "Alessio Ambrogetti", "minuto": 37 },
-        { "nome": "Davide Valtancoli", "minuto": 79 },
-        { "nome": "Giovanni Tani", "minuto": 93 }
+        {
+          "nome": "Cesare Camanzi",
+          "minuto": 5
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 37
+        },
+        {
+          "nome": "Davide Valtancoli",
+          "minuto": 79
+        },
+        {
+          "nome": "Giovanni Tani",
+          "minuto": 93
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Demaj", "minuto": 44 }
+        {
+          "nome": "Demaj",
+          "minuto": 44
+        }
       ]
     },
     {
@@ -214,11 +332,22 @@
       "risultato": "2-1",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Alessio Ambrogetti", "minuto": 34, "rigore": true },
-        { "nome": "Giovanni Tani", "minuto": 41 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 34,
+          "rigore": true
+        },
+        {
+          "nome": "Giovanni Tani",
+          "minuto": 41
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Balward Z.", "minuto": 68, "rigore": true }
+        {
+          "nome": "Balward Z.",
+          "minuto": 68,
+          "rigore": true
+        }
       ]
     },
     {
@@ -230,26 +359,42 @@
       "risultato": "1-2",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Mboup M.", "minuto": 50 }
+        {
+          "nome": "Mboup M.",
+          "minuto": 50
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Mattia Valentini", "minuto": 11 },
-        { "nome": "Alessio Ambrogetti", "minuto": 35, "rigore": true }
+        {
+          "nome": "Mattia Valentini",
+          "minuto": 11
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 35,
+          "rigore": true
+        }
       ]
     },
     {
       "giornata": 16,
-      "data": "2026-01-31",
+      "data": "2026-02-01",
       "ora": "14:30",
       "casa": "Sporting Predappio",
       "trasferta": "Real",
       "risultato": "1-1",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Filippo Passero", "minuto": 6 }
+        {
+          "nome": "Filippo Passero",
+          "minuto": 6
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Lucchi E.", "minuto": 58 }
+        {
+          "nome": "Lucchi E.",
+          "minuto": 58
+        }
       ]
     },
     {
@@ -261,22 +406,38 @@
       "risultato": "3-2",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Ravaioli M.", "minuto": 39 },
-        { "nome": "Celli M.", "minuto": 50 },
-        { "nome": "Giuffre A.", "minuto": 62 }
+        {
+          "nome": "Ravaioli M.",
+          "minuto": 39
+        },
+        {
+          "nome": "Celli M.",
+          "minuto": 50
+        },
+        {
+          "nome": "Giuffre A.",
+          "minuto": 62
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Abdessamad Charaf", "minuto": 88, "rigore": true },
-        { "nome": "Nicola Rafelli", "minuto": 94 }
+        {
+          "nome": "Abdessamad Charaf",
+          "minuto": 88,
+          "rigore": true
+        },
+        {
+          "nome": "Nicola Rafelli",
+          "minuto": 94
+        }
       ]
     },
     {
       "giornata": 18,
-      "data": "2026-03-11",
+      "data": "2026-02-15",
       "ora": "20:30",
       "casa": "Sporting Predappio",
       "trasferta": "Carpinello",
-      "risultato": null,
+      "risultato": "2-0",
       "luogo": "Stadio Strocchi-Cavazzoni"
     },
     {
@@ -288,11 +449,21 @@
       "risultato": "1-2",
       "luogo": "Trasferta",
       "marcatoriCasa": [
-        { "nome": "Lo Giudice V.", "minuto": 75 }
+        {
+          "nome": "Lo Giudice V.",
+          "minuto": 75
+        }
       ],
       "marcatoriTrasferta": [
-        { "nome": "Alessio Ambrogetti", "minuto": 35, "rigore": true },
-        { "nome": "Alessio Ambrogetti", "minuto": 65 }
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 35,
+          "rigore": true
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 65
+        }
       ]
     },
     {
@@ -304,7 +475,10 @@
       "risultato": "1-0",
       "luogo": "Stadio Strocchi-Cavazzoni",
       "marcatoriCasa": [
-        { "nome": "Riccardo Milandri", "minuto": 83 }
+        {
+          "nome": "Riccardo Milandri",
+          "minuto": 83
+        }
       ],
       "marcatoriTrasferta": []
     },
@@ -314,7 +488,7 @@
       "ora": "14:30",
       "casa": "Marina Calcio",
       "trasferta": "Sporting Predappio",
-      "risultato": null,
+      "risultato": "1-2",
       "luogo": "Trasferta"
     },
     {
@@ -323,7 +497,7 @@
       "ora": "14:30",
       "casa": "Sporting Predappio",
       "trasferta": "F. Zarattini",
-      "risultato": null,
+      "risultato": "4-3",
       "luogo": "Stadio Strocchi-Cavazzoni"
     },
     {
@@ -332,8 +506,20 @@
       "ora": "14:30",
       "casa": "San Pancrazio",
       "trasferta": "Sporting Predappio",
-      "risultato": null,
-      "luogo": "Trasferta"
+      "risultato": "1-1",
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        {
+          "nome": "Ravarra F.",
+          "minuto": 80
+        }
+      ],
+      "marcatoriTrasferta": [
+        {
+          "nome": "Bance A.",
+          "minuto": 85
+        }
+      ]
     },
     {
       "giornata": 24,

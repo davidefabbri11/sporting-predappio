@@ -82,6 +82,26 @@ function fetchUrl(url, retries = 2) {
   });
 }
 
+// ── Team name matching helpers ───────────────────────────────
+
+function normalizeTeamName(name) {
+  return name
+    .toLowerCase()
+    .replace(/^(a\.?s\.?d?\.?|a\.?c\.?|u\.?s\.?|g\.?s\.?|f\.?c\.?|pol\.?|s\.?c\.?)\s+/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function teamsMatch(a, b) {
+  const na = normalizeTeamName(a);
+  const nb = normalizeTeamName(b);
+  if (na === nb) return true;
+  if (na.includes(nb) || nb.includes(na)) return true;
+  // Fallback: first 6 chars match (handles abbreviations)
+  if (na.length >= 6 && nb.length >= 6 && na.substring(0, 6) === nb.substring(0, 6)) return true;
+  return false;
+}
+
 // ── HTML parsing helpers ──────────────────────────────────────
 
 function extractCells(rowHtml) {
@@ -184,31 +204,48 @@ function parseMarcatori(html) {
 
 function parseMatchResults(html) {
   const results = [];
+  // Match rows that contain "giornata" (actual match rows)
   const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
   let match;
 
   while ((match = rowRegex.exec(html)) !== null) {
-    const cells = extractCells(match[1]);
-    if (cells.length >= 4) {
-      const dateCell = cells.find((c) => /^\d{2}\/\d{2}\/\d{4}$/.test(c));
-      const scoreCell = cells.find((c) => /^\d+-\d+$/.test(c));
+    const rowHtml = match[1];
+    // Only process rows with giornata data
+    if (!rowHtml.includes('giornata')) continue;
 
-      if (dateCell) {
-        const nonMeta = cells.filter(
-          (c) => c !== dateCell && c !== scoreCell && !/^\d{1,2}$/.test(c) && c.length > 1
-        );
+    // Extract date: <td data-label="Data">DD/MM/YYYY</td>
+    const dateMatch = rowHtml.match(/data-label="Data"[^>]*>(\d{2}\/\d{2}\/\d{4})/);
+    if (!dateMatch) continue;
 
-        if (nonMeta.length >= 2) {
-          const [dd, mm, yyyy] = dateCell.split('/');
-          results.push({
-            data: `${yyyy}-${mm}-${dd}`,
-            casa: nonMeta[0],
-            trasferta: nonMeta[1],
-            risultato: scoreCell || null,
-          });
-        }
-      }
+    // Extract teams from <div class="incontro">
+    const incontroMatch = rowHtml.match(/<div class="incontro">([\s\S]*?)<\/div>\s*<\/td>/);
+    if (!incontroMatch) continue;
+
+    // Teams are in separate <div> tags within incontro
+    const teamDivs = [];
+    const divRegex = /<div(?![^>]*class="separator")[^>]*>([^<]+)<\/div>/g;
+    let d;
+    while ((d = divRegex.exec(incontroMatch[1])) !== null) {
+      const name = d[1].trim();
+      if (name && name !== '-') teamDivs.push(name);
     }
+
+    if (teamDivs.length < 2) continue;
+
+    // Extract result: "X - Y" format (with spaces around dash)
+    const resultMatch = rowHtml.match(/(\d+)\s*-\s*(\d+)\s*<\/td>\s*$/);
+    let risultato = null;
+    if (resultMatch) {
+      risultato = `${resultMatch[1]}-${resultMatch[2]}`;
+    }
+
+    const [dd, mm, yyyy] = dateMatch[1].split('/');
+    results.push({
+      data: `${yyyy}-${mm}-${dd}`,
+      casa: teamDivs[0],
+      trasferta: teamDivs[1],
+      risultato,
+    });
   }
 
   return results;
@@ -293,35 +330,48 @@ function parseTabellino(html) {
 // ── Merge results into existing matches.json ──────────────────
 
 function mergeMatchResults(existingMatches, scrapedResults) {
-  let updated = 0;
+  let updatedResults = 0;
+  let updatedDates = 0;
+  const unmatched = [];
 
   for (const partita of existingMatches.partite) {
-    if (partita.risultato !== null) continue;
-
     const found = scrapedResults.find((r) => {
-      const casaMatch =
-        r.casa.includes(partita.casa.substring(0, 8)) ||
-        partita.casa.includes(r.casa.substring(0, 8));
-      const trasfMatch =
-        r.trasferta.includes(partita.trasferta.substring(0, 8)) ||
-        partita.trasferta.includes(r.trasferta.substring(0, 8));
-      return casaMatch && trasfMatch && r.risultato;
+      return teamsMatch(r.casa, partita.casa) && teamsMatch(r.trasferta, partita.trasferta);
     });
 
-    if (found) {
-      partita.risultato = found.risultato;
-      if (found.data !== partita.data) {
-        console.log(`   📅 ${partita.casa} vs ${partita.trasferta}: data aggiornata ${partita.data} → ${found.data}`);
-        partita.data = found.data;
+    if (!found) {
+      if (partita.risultato === null) {
+        unmatched.push(`G${partita.giornata} ${partita.casa} vs ${partita.trasferta}`);
       }
-      if (partita.nota === 'Rinviata') {
+      continue;
+    }
+
+    // Update result if missing
+    if (partita.risultato === null && found.risultato) {
+      partita.risultato = found.risultato;
+      if (partita.nota === 'Rinviata' || partita.nota === 'RINVIATA') {
         delete partita.nota;
       }
-      updated++;
+      console.log(`   ✅ G${partita.giornata} ${partita.casa} vs ${partita.trasferta}: ${found.risultato}`);
+      updatedResults++;
+    }
+
+    // Update date if changed (for rescheduled matches)
+    if (found.data && found.data !== partita.data) {
+      console.log(`   📅 G${partita.giornata} ${partita.casa} vs ${partita.trasferta}: data ${partita.data} → ${found.data}`);
+      partita.data = found.data;
+      updatedDates++;
     }
   }
 
-  return updated;
+  if (unmatched.length > 0) {
+    console.log(`   ⚠️  ${unmatched.length} partite senza risultato non trovate online:`);
+    for (const u of unmatched) {
+      console.log(`      - ${u}`);
+    }
+  }
+
+  return updatedResults + updatedDates;
 }
 
 // ── Merge tabellino data into matches.json ──────────────────
@@ -336,13 +386,7 @@ function mergeTabellini(existingMatches, tabelliniData) {
     if (partita.marcatoriTrasferta && partita.marcatoriTrasferta.length > 0) continue;
 
     const tab = tabelliniData.find((t) => {
-      const casaMatch =
-        t.casa.includes(partita.casa.substring(0, 8)) ||
-        partita.casa.includes(t.casa.substring(0, 8));
-      const trasfMatch =
-        t.trasferta.includes(partita.trasferta.substring(0, 8)) ||
-        partita.trasferta.includes(t.trasferta.substring(0, 8));
-      return casaMatch && trasfMatch;
+      return teamsMatch(t.casa, partita.casa) && teamsMatch(t.trasferta, partita.trasferta);
     });
 
     if (tab && (tab.marcatoriCasa.length > 0 || tab.marcatoriTrasferta.length > 0)) {
@@ -418,13 +462,18 @@ async function main() {
     const scrapedResults = parseMatchResults(statsHtml);
     console.log(`   ✅ ${scrapedResults.length} risultati trovati`);
 
-    if (scrapedResults.length > 0 && fs.existsSync(MATCHES_PATH)) {
-      const existingMatches = JSON.parse(fs.readFileSync(MATCHES_PATH, 'utf-8'));
+    let matchesModified = false;
+    let existingMatches;
+    if (fs.existsSync(MATCHES_PATH)) {
+      existingMatches = JSON.parse(fs.readFileSync(MATCHES_PATH, 'utf-8'));
+    }
+
+    if (scrapedResults.length > 0 && existingMatches) {
       const updated = mergeMatchResults(existingMatches, scrapedResults);
 
       if (updated > 0) {
-        fs.writeFileSync(MATCHES_PATH, JSON.stringify(existingMatches, null, 2) + '\n');
-        console.log(`   💾 ${updated} nuovi risultati aggiornati in matches.json`);
+        matchesModified = true;
+        console.log(`   💾 ${updated} aggiornamenti in matches.json`);
       } else {
         console.log('   ℹ️  Nessun nuovo risultato da aggiornare');
       }
@@ -454,13 +503,18 @@ async function main() {
       }
     }
 
-    if (tabelliniData.length > 0 && fs.existsSync(MATCHES_PATH)) {
-      const existingMatches = JSON.parse(fs.readFileSync(MATCHES_PATH, 'utf-8'));
+    if (tabelliniData.length > 0 && existingMatches) {
       const updatedTab = mergeTabellini(existingMatches, tabelliniData);
       if (updatedTab > 0) {
-        fs.writeFileSync(MATCHES_PATH, JSON.stringify(existingMatches, null, 2) + '\n');
-        console.log(`   💾 ${updatedTab} tabellini aggiornati in matches.json`);
+        matchesModified = true;
+        console.log(`   💾 ${updatedTab} tabellini aggiornati`);
       }
+    }
+
+    // Save matches.json once if anything changed
+    if (matchesModified && existingMatches) {
+      fs.writeFileSync(MATCHES_PATH, JSON.stringify(existingMatches, null, 2) + '\n');
+      console.log(`\n   💾 ${path.relative(process.cwd(), MATCHES_PATH)} aggiornato`);
     }
 
     // ── Riepilogo ──
