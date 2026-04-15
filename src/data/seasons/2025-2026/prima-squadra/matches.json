@@ -527,7 +527,7 @@
       "ora": "15:30",
       "casa": "Sporting Predappio",
       "trasferta": "G.S. Romagna",
-      "risultato": null,
+      "risultato": "3-0",
       "luogo": "Stadio Strocchi-Cavazzoni"
     },
     {
@@ -536,8 +536,34 @@
       "ora": "15:30",
       "casa": "Sporting Predappio",
       "trasferta": "S. Zaccaria",
-      "risultato": null,
-      "luogo": "Stadio Strocchi-Cavazzoni"
+      "risultato": "4-1",
+      "luogo": "Stadio Strocchi-Cavazzoni",
+      "marcatoriCasa": [
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 6,
+          "rigore": true
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 9
+        },
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 53,
+          "rigore": true
+        },
+        {
+          "nome": "Rafelli Nicola",
+          "minuto": 86
+        }
+      ],
+      "marcatoriTrasferta": [
+        {
+          "nome": "Severi T.",
+          "minuto": 80
+        }
+      ]
     },
     {
       "giornata": 26,
