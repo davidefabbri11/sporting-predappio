@@ -1,160 +1,160 @@
 {
-  "aggiornamento": "2026-04-15",
-  "giornata": 25,
+  "aggiornamento": "2026-04-20",
+  "giornata": 26,
   "classifica": [
     {
       "pos": 1,
       "squadra": "Sporting Predappio",
-      "punti": 52,
-      "pg": 25,
-      "v": 16,
+      "punti": 55,
+      "pg": 26,
+      "v": 17,
       "n": 4,
       "p": 5,
-      "gf": 49,
-      "gs": 28
+      "gf": 52,
+      "gs": 29
     },
     {
       "pos": 2,
       "squadra": "F. Zarattini",
-      "punti": 50,
-      "pg": 25,
-      "v": 15,
+      "punti": 53,
+      "pg": 26,
+      "v": 16,
       "n": 5,
       "p": 5,
-      "gf": 53,
-      "gs": 28
+      "gf": 56,
+      "gs": 29
     },
     {
       "pos": 3,
       "squadra": "Marina Calcio",
-      "punti": 48,
-      "pg": 25,
-      "v": 14,
+      "punti": 51,
+      "pg": 26,
+      "v": 15,
       "n": 6,
       "p": 5,
-      "gf": 36,
-      "gs": 17
+      "gf": 38,
+      "gs": 18
     },
     {
       "pos": 4,
       "squadra": "Porto Fuori",
       "punti": 47,
-      "pg": 25,
+      "pg": 26,
       "v": 14,
       "n": 5,
-      "p": 6,
+      "p": 7,
       "gf": 51,
-      "gs": 29
+      "gs": 34
     },
     {
       "pos": 5,
       "squadra": "Medla",
-      "punti": 42,
-      "pg": 25,
-      "v": 13,
+      "punti": 45,
+      "pg": 26,
+      "v": 14,
       "n": 3,
       "p": 9,
-      "gf": 40,
-      "gs": 30
+      "gf": 42,
+      "gs": 31
     },
     {
       "pos": 6,
       "squadra": "Carpinello",
-      "punti": 41,
-      "pg": 25,
-      "v": 11,
+      "punti": 44,
+      "pg": 26,
+      "v": 12,
       "n": 8,
       "p": 6,
-      "gf": 42,
+      "gf": 47,
       "gs": 34
     },
     {
       "pos": 7,
-      "squadra": "S. Colombano Italtex",
-      "punti": 38,
-      "pg": 25,
+      "squadra": "S. Zaccaria",
+      "punti": 39,
+      "pg": 26,
       "v": 11,
-      "n": 5,
+      "n": 6,
       "p": 9,
-      "gf": 39,
-      "gs": 30
+      "gf": 40,
+      "gs": 31
     },
     {
       "pos": 8,
-      "squadra": "S. Zaccaria",
-      "punti": 36,
-      "pg": 25,
-      "v": 10,
-      "n": 6,
-      "p": 9,
-      "gf": 34,
-      "gs": 30
+      "squadra": "S. Colombano Italtex",
+      "punti": 38,
+      "pg": 26,
+      "v": 11,
+      "n": 5,
+      "p": 10,
+      "gf": 40,
+      "gs": 33
     },
     {
       "pos": 9,
       "squadra": "Low Street Ponte N.",
       "punti": 33,
-      "pg": 25,
+      "pg": 26,
       "v": 10,
       "n": 3,
-      "p": 12,
-      "gf": 34,
-      "gs": 27
+      "p": 13,
+      "gf": 35,
+      "gs": 30
     },
     {
       "pos": 10,
       "squadra": "San Pancrazio",
-      "punti": 28,
-      "pg": 25,
-      "v": 7,
+      "punti": 31,
+      "pg": 26,
+      "v": 8,
       "n": 7,
       "p": 11,
-      "gf": 36,
-      "gs": 42
+      "gf": 39,
+      "gs": 43
     },
     {
       "pos": 11,
       "squadra": "Real",
       "punti": 28,
-      "pg": 25,
+      "pg": 26,
       "v": 8,
       "n": 5,
-      "p": 12,
-      "gf": 33,
-      "gs": 59
+      "p": 13,
+      "gf": 34,
+      "gs": 61
     },
     {
       "pos": 12,
       "squadra": "Punta Marina",
       "punti": 25,
-      "pg": 25,
+      "pg": 26,
       "v": 7,
       "n": 4,
-      "p": 14,
-      "gf": 34,
-      "gs": 50
+      "p": 15,
+      "gf": 35,
+      "gs": 53
     },
     {
       "pos": 13,
       "squadra": "Godo",
       "punti": 15,
-      "pg": 25,
+      "pg": 26,
       "v": 4,
       "n": 3,
-      "p": 18,
-      "gf": 24,
-      "gs": 51
+      "p": 19,
+      "gf": 25,
+      "gs": 53
     },
     {
       "pos": 14,
       "squadra": "G.S. Romagna",
       "punti": 7,
-      "pg": 25,
+      "pg": 26,
       "v": 1,
       "n": 4,
-      "p": 20,
-      "gf": 19,
-      "gs": 69
+      "p": 21,
+      "gf": 20,
+      "gs": 75
     }
   ],
   "marcatori": [

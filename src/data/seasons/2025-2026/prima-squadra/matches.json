@@ -571,8 +571,28 @@
       "ora": "15:30",
       "casa": "Punta Marina",
       "trasferta": "Sporting Predappio",
-      "risultato": null,
-      "luogo": "Trasferta"
+      "risultato": "1-3",
+      "luogo": "Trasferta",
+      "marcatoriCasa": [
+        {
+          "nome": "Basanisi Rocco",
+          "minuto": 87
+        }
+      ],
+      "marcatoriTrasferta": [
+        {
+          "nome": "Alessio Ambrogetti",
+          "minuto": 13
+        },
+        {
+          "nome": "Cesare Camanzi",
+          "minuto": 29
+        },
+        {
+          "nome": "Giovanni Tani",
+          "minuto": 52
+        }
+      ]
     }
   ]
 }
