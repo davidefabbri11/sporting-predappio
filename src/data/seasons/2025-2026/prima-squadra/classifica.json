@@ -160,15 +160,31 @@
   "marcatori": [
     {
       "nome": "Alessio Ambrogetti",
-      "gol": 12,
+      "gol": 20,
       "rigori": 5
+    },
+    {
+      "nome": "Glauco Argentino",
+      "gol": 4
+    },
+    {
+      "nome": "Cesare Camanzi",
+      "gol": 4
     },
     {
       "nome": "Mattia Valentini",
       "gol": 4
     },
     {
-      "nome": "Cesare Camanzi",
+      "nome": "Aziz Bance",
+      "gol": 3
+    },
+    {
+      "nome": "Francesco Casadei",
+      "gol": 3
+    },
+    {
+      "nome": "Giovanni Tani",
       "gol": 3
     },
     {
@@ -176,21 +192,13 @@
       "gol": 3
     },
     {
-      "nome": "Glauco Argentino",
+      "nome": "Abdoul Rachid Bance",
       "gol": 2
     },
     {
       "nome": "Abdessamad Charaf",
       "gol": 2,
       "rigori": 1
-    },
-    {
-      "nome": "Giovanni Tani",
-      "gol": 2
-    },
-    {
-      "nome": "Francesco Casadei",
-      "gol": 1
     },
     {
       "nome": "Riccardo Milandri",
